@@ -31,7 +31,7 @@ let createTable (data : string[,]) borderSize =
     table
 
 [<EntryPoint>]
-let main argv = 
+let main _ = 
     let filePath = @"C:\x\result.docx"
     let text = "Test of creating a table."
     let data = array2D [|[| "a"; "b" |]; [| "c"; "d" |]|]
