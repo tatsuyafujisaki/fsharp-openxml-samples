@@ -20,7 +20,7 @@ let createTable (data : string[,]) borderSize =
     let tbs = createTableBorders borderSize
     tps.AppendChild(tbs) |> ignore
 
-    let table = new Table(tps :> OpenXmlElement)
+    let table = new Table(tps :> E)
     for i = 0 to data.GetUpperBound(0) do
         let tr = new TableRow()
         for j = 0 to data.GetUpperBound(1) do
