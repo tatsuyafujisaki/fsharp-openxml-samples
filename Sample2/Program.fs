@@ -2,7 +2,7 @@ open DocumentFormat.OpenXml
 open DocumentFormat.OpenXml.Packaging
 open DocumentFormat.OpenXml.Wordprocessing
 
-let createTableBorders size =
+let private createTableBorders size =
     let size' = UInt32Value (uint32 size)
     let tbs = TableBorders()
     tbs.AppendChild(TopBorder (Val = EnumValue<BorderValues>(BorderValues.Single), Size = size')) |> ignore
@@ -13,9 +13,9 @@ let createTableBorders size =
     tbs.AppendChild(InsideVerticalBorder (Val = EnumValue<BorderValues>(BorderValues.Single), Size = size')) |> ignore
     tbs
 
-type E = OpenXmlElement
+type private E = OpenXmlElement
 
-let createTable (data : string[,]) borderSize =
+let private createTable (data : string[,]) borderSize =
     let tps = TableProperties()
     let tbs = createTableBorders borderSize
     tps.AppendChild(tbs) |> ignore
@@ -32,7 +32,7 @@ let createTable (data : string[,]) borderSize =
     table
 
 [<EntryPoint>]
-let main _ = 
+let private main _ = 
     let filePath = @"C:\result.docx"
     let text = "Test of creating a table."
     let data = array2D [|[| "a"; "b" |]; [| "c"; "d" |]|]

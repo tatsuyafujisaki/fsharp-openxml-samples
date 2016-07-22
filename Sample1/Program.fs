@@ -4,7 +4,7 @@ open DocumentFormat.OpenXml.Packaging
 open DocumentFormat.OpenXml.Wordprocessing
 
 [<EntryPoint>]
-let main _ =
+let private main _ =
     use wd = WordprocessingDocument.Open(@"C:\foo.docx", false)
     wd.MainDocumentPart
         .Document
@@ -16,5 +16,6 @@ let main _ =
         |> Seq.filter (fun element -> element :? Run)
         |> Seq.iter (fun run -> printfn "%A" run.InnerText)
 
+    Console.WriteLine("Hello world")
     Console.ReadKey() |> ignore
     0
