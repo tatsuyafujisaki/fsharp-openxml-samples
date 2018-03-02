@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/ev2ap9mgsj9kwtjq?svg=true)](https://ci.appveyor.com/project/tatsuya/fsharp-openxml-examples)
+[![Build status](https://ci.appveyor.com/api/projects/status/xx0qlrc6o29xx85j?svg=true)](https://ci.appveyor.com/project/tatsuya/fsharp-openxml-samples)
 
 # Sample1
 * Implement the following article in F#.
